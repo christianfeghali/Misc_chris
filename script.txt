@@ -1,0 +1,35 @@
+#replace Name with your name 
+N=1
+
+
+for n in $(seq 1 5)#value of n going from 1 to 5by an ecrement of 1
+do #command telling the program to do
+echo "making christian${n} a new directory for the value of N=${n}"#phrase explaining what the program is doing
+mkdir christian${n}#creating new directory named christian with the value of n
+sed -e "s/xxxx/${N}/" inputOrig.txt > input.txt #change xxxx in input.txt by the of N
+cd christian${n}#go to the created directory
+cp ../input.txt ./#copy the input.txt to the created directory
+cd ../#exit current directory and going back to the previous one 
+N=$(( $N + $n ))#increment the value of N by adding n to it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+done
